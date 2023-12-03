@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/PostCard/PostCard.astro";
+import type { MarkdownInstance } from "astro";
+
+export const getStaticPaths = async () => {
+  const postList: MarkdownInstance<Record<string, any>>[] =
+    await Astro.glob("../posts/*.md");
+
+  const tagList = [
+    ...new Set(postList.map((post) => post.frontmatter.tags).flat()),
+  ];
+
+  return tagList.map((tag) => {
+    const filteredPosts = postList.filter((post) =>
+      post.frontmatter.tags.includes(tag),
+    );
+
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+};
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <p>Posts de la categoría {tag}</p>
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <PostCard
+            image={post.frontmatter.image}
+            url={post.url}
+            title={post.frontmatter.title}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

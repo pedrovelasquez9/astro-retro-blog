@@ -1,0 +1,8 @@
+---
+import "./Tag.css";
+const { tagName } = Astro.props;
+---
+
+<a href={`/tags/${tagName}`} class="nes-badge">
+  <span class="is-warning">{tagName}</span>
+</a>

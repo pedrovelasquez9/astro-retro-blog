@@ -1,0 +1,16 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import PostImage from "../components/PostImage/PostImage.astro";
+const { frontmatter } = Astro.props;
+const { url, alt } = frontmatter.image;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <PostImage url={url} alt={alt} />
+  <div class="nes-container is-dark with-title">
+    <p class="title">{frontmatter.title}</p>
+    <slot />
+  </div>
+  <p>Publicado el: {frontmatter.pubDate.slice(0, 10)}</p>
+  <p>Autor: {frontmatter.author}</p>
+</BaseLayout>

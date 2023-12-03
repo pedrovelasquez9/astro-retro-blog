@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("/fonts/PressStart2P-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: "Press Start 2P";
+  background-color: #240046;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: grid;
+  grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto;
+  gap: 10px;
+  color: #ff6d00;
+}
+
+header {
+  grid-area: "header";
+}
+
+main {
+  grid-area: "main";
+}
+
+footer {
+  grid-area: "footer";
+}
+
+.post-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nes-avatar {
+  border: 1px solid #ff6d00;
+}
+
+.tag-list-container {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nes-badge span.is-warning:first-child {
+  position: relative;
+  padding: 5px;
+}
+
+.nes-badge,
+.nes-badge:hover {
+  width: auto;
+  text-decoration: none;
+}

@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Inicio";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="nes-container is-dark with-title">
+    <p class="title">Bienvenidos al blog retro de Programación en español</p>
+    <div class="lists">
+      <ul class="nes-list is-circle">
+        <p>
+          Este es un blog retro desarrollado con <i
+            class="nes-icon is-small heart"></i>, Astro y NES.css.
+        </p>
+        <p>
+          ¡La idea es que el blog sirva como tutorial para crearlo desde cero
+          usando estas tecnologías y aprendas en el camino, así que será súper
+          divertido <i class="nes-logo"></i>!
+        </p>
+        <p>
+          Si te ha gustado el tutorial publicado en <i
+            class="nes-icon youtube is-small"></i> no olvides unirte a la
+          comunidad en las redes al pie de página.
+        </p>
+        <p>
+          Como siempre, el código está en <i class="nes-icon github is-small"
+          ></i>, así que no te vayas sin darle una <i
+            class="nes-icon is-small star"></i>
+        </p>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

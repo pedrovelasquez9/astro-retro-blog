@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Sobre mi";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="nes-container is-dark">
+    <section class="message-list">
+      <section class="message -left">
+        <div class="nes-balloon from-left is-dark">
+          <p>¡Hola! Mi nombre es Pedro Plasencia <i class="nes-jp-logo"></i></p>
+        </div>
+      </section>
+
+      <section class="message -right">
+        <div class="nes-balloon from-right is-dark">
+          <p>Web developer y creador de "Programación en español"</p>
+        </div>
+      </section>
+
+      <section class="message -left">
+        <div class="nes-balloon from-left is-dark">
+          <p>Este blog está hecho con Astro y NES.css</p>
+        </div>
+      </section>
+
+      <section class="message -right">
+        <div class="nes-balloon from-right is-dark">
+          <p>
+            Si quieres seguirme, mira el pie de página <i
+              class="nes-icon is-large heart"></i>
+          </p>
+        </div>
+        <i class="nes-bcrikko"></i>
+      </section>
+    </section>
+  </section>
+</BaseLayout>

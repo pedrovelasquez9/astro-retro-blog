@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag/Tag.astro";
+const postList = await Astro.glob("../posts/*.md");
+
+const tagList = [
+  ...new Set(postList.map((post) => post.frontmatter.tags).flat()),
+];
+const pageTitle = "Categorías";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul class="tag-list-container">
+    {tagList.map((tag) => <Tag tagName={tag} />)}
+  </ul>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard/PostCard.astro";
+const pageTitle = "Blog";
+const postList = await Astro.glob("../pages/posts/*.md");
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <ul class="post-list">
+    {
+      postList.map((post) => (
+        <li>
+          <PostCard
+            image={post.frontmatter.image}
+            url={post.url}
+            title={post.frontmatter.title}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
